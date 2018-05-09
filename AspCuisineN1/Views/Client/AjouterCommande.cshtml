@@ -1,0 +1,29 @@
+﻿@model AspCuisineN1.Models.Poko.CCommande
+@{
+    ViewBag.Title = "Ajouter une commande";
+}
+
+<h2>Ajouter une commande</h2>
+<div>
+    @using (Html.BeginForm("AjouterCommandeVerif", "Client", FormMethod.Post))
+    {
+        <div class="form-group">
+            @Html.LabelFor(model => model.Plat)
+            @Html.DropDownListFor(model => model.Plat.Id, (SelectList)ViewBag.ListePlats)
+            @Html.ValidationMessageFor(model => model.Plat)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Quantite)
+            @Html.TextBoxFor(model => model.Quantite)
+            @Html.ValidationMessageFor(model => model.Quantite)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Prix)
+            @Html.TextBoxFor(model => model.Prix)
+            @Html.ValidationMessageFor(model => model.Prix)
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Sauvegarder" />
+        </div>
+    }
+</div>

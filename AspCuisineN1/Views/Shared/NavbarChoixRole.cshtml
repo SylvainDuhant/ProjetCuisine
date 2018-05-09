@@ -1,0 +1,25 @@
+﻿@{
+    if (Session["Role"] != null)
+    {
+        if ((string)Session["Role"] == "Client")
+        {
+            @Html.Partial("NavbarClient")
+        }
+        else if ((string)Session["Role"] == "Cuisinier")
+        {
+            @Html.Partial("NavbarCuisinier")
+        }
+        else if ((string)Session["Role"] == "Administrateur")
+        {
+            @Html.Partial("NavbarAdministrateur")
+        }
+        else
+        {
+            @Html.Partial("NavbarDefault")
+        }
+    }
+    else
+    {
+        @Html.Partial("NavbarDefault")
+    }
+}

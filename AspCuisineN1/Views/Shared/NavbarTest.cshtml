@@ -1,0 +1,29 @@
+﻿<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            @Html.ActionLink("Accueil", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Liste de Theme", "APropos", "Home")</li>
+                <li class="dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">Dropdown <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                    </ul>
+                </li>
+                <li>
+                    Gerer Utilisateur
+                    <ol>
+                        <li>@Html.ActionLink("Liste des utilisateurs", "APropos", "Home")</li>
+                    </ol>
+                </li>
+                <li>@Html.ActionLink("Gerer Profil", "APropos", "Home")</li>
+                <li>@Html.ActionLink("A Propos", "APropos", "Home")</li>
+                <li>@Html.ActionLink("Inscription", "APropos", "Home")</li>
+            </ul>
+        </div>
+    </div>
+</div>
+

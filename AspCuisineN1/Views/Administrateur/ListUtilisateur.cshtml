@@ -1,0 +1,24 @@
+﻿@using AspCuisineN1.Models.Poko;
+@{
+    ViewBag.Title = "Liste d'utilisateurs";
+}
+
+<h2>Liste de Utilisateur</h2>
+<table class="table">
+    <tbody>
+        @{
+            foreach (CUtilisateur user in ViewBag.list_utilisateur)
+            {
+                <tr>
+                    <td>Id : @user.Id</td>
+                    <td>Nom : @user.Nom</td>
+                    <td>Prenom : @user.Prenom</td>
+                    <td>Role : @user.Role</td>
+                    <td>Numero de telephone : @user.NumTel</td>
+                    <td>@Html.ActionLink("Supprimer", "SupprimerUtilisateur", "Administrateur", new { userid = user.Id }, null)</td> 
+                    <td>@Html.ActionLink("Modifier", "ModifierUtilisateur", "Administrateur", new { userid = user.Id }, null)</td> 
+                </tr>
+            }
+        }
+    </tbody>
+</table>

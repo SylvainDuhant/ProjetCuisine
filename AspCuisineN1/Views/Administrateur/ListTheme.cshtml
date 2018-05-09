@@ -1,0 +1,20 @@
+﻿@using AspCuisineN1.Models.Poko;
+@{
+    ViewBag.Title = "Liste de themes";
+}
+
+<h2>Liste de Theme</h2>
+<table class="table">
+    <tbody>
+        @{
+            foreach (CTheme t in ViewBag.list_theme)
+            {
+                <tr>
+                    <td>Nom : @t.Nom</td>
+                    <td>Description : @t.Description</td>
+                    <td>@Html.ActionLink("Supprimer", "SupprimerTheme", "Administrateur", new { themeid = t.Id }, null)</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

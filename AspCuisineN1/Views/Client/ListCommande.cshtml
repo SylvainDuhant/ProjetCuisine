@@ -1,0 +1,21 @@
+﻿@using AspCuisineN1.Models.Poko;
+@{
+    ViewBag.Title = "Liste de commandes";
+}
+
+<h2>Liste de Commande</h2>
+<table class="table">
+    <tbody>
+        @{
+            foreach (CCommande c in ViewBag.list_commande)
+            {
+                <tr>
+                    <td>Id : @c.Id</td>
+                    <td>Plat : @c.Plat</td>
+                    <td>Quantite : @c.Quantite</td>
+                    <td>Prix: @c.Prix</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

@@ -1,0 +1,17 @@
+﻿<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            @Html.ActionLink("Accueil", "Index", "Home", new { @class = "navbar-brand" })
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Liste de Theme", "ConsulterTheme", "Home")</li>
+                <li>@Html.ActionLink("A Propos", "APropos", "Home")</li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>@Html.ActionLink("Inscription", "Inscription", "Account")</li>
+                <li>@Html.ActionLink("Login", "Login", "Account")</li>
+            </ul>
+        </div>
+    </div>
+</div>

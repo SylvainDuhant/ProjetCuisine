@@ -1,0 +1,29 @@
+﻿<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            @Html.ActionLink("Accueil", "Index", "Home", new { @class = "navbar-brand" })
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">Gerer Theme<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("Liste de theme", "ListTheme", "Administrateur")</li>
+                        <li>@Html.ActionLink("Ajouter theme", "AjouterTheme", "Administrateur")</li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">Gerer Utilisateur<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("Liste des utilisateurs", "ListUtilisateur", "Administrateur")</li>
+                    </ul>
+                </li>
+                <li>@Html.ActionLink("Gerer Profil", "ModifierProfil", "Account")</li>
+                <li>@Html.ActionLink("A Propos", "APropos", "Home")</li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>@Html.ActionLink("Deconnexion", "Deconnecter", "Account")</li>
+            </ul>
+        </div>
+    </div>
+</div>

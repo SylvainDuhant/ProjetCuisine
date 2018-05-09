@@ -1,0 +1,31 @@
+﻿<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            @Html.ActionLink("Accueil", "Index", "Home", new{@class="navbar-brand"})
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Liste de Theme", "ListTheme", "Cuisinier")</li>
+                <li class="dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">Gerer Plat <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("Liste de plat", "ListPlat", "Cuisinier")</li>
+                        <li>@Html.ActionLink("Ajouter plat", "AjouterPlat", "Cuisinier")</li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">Gerer Commande <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("Liste de commande", "ListCommande", "Client")</li>
+                        <li>@Html.ActionLink("Ajouter commande", "AjouterCommande", "Client")</li>
+                    </ul>
+                </li>
+                <li>@Html.ActionLink("Gerer Profil", "ModifierProfil", "Account")</li>
+                <li>@Html.ActionLink("A Propos", "APropos", "Home")</li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>@Html.ActionLink("Deconnexion", "Deconnecter", "Account")</li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+﻿@model AspCuisineN1.Models.Poko.CUtilisateur
+@{
+    ViewBag.Title = "Connexion";
+}
+
+<div class="container">
+    <h2>Connexion</h2>
+    @using (Html.BeginForm("LoginConf", "Account"))
+    {
+        <table>
+            <tr>
+                <td>@Html.LabelFor(model => model.Nom)</td>
+                <td>@Html.TextBoxFor(model => model.Nom)</td>
+                <td>@Html.ValidationMessageFor(model => model.Nom)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.MotDePass)</td>
+                <td>@Html.PasswordFor(model => model.MotDePass)</td>
+                <td>@Html.ValidationMessageFor(model => model.MotDePass)</td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Se Connecter" /></td>
+            </tr>
+        </table>
+    }
+</div>

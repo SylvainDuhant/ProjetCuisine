@@ -1,0 +1,20 @@
+﻿@using AspCuisineN1.Models.Poko;
+@{
+    ViewBag.Title = "Liste de plats";
+}
+
+<h2>Liste de Plat</h2>
+<table class="table">
+    <tbody>
+        @{
+            foreach (CPlat p in ViewBag.list_plat)
+            {
+                <tr>
+                    <td>Nom : @p.Nom</td>
+                    <td>Description: @p.Description</td>
+                    <td>@Html.ActionLink("Supprimer", "SupprimerPlat", "Cuisinier", new { platid = p.Id }, null)</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
