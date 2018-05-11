@@ -29,7 +29,7 @@ namespace AspCuisineN1.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (account.Role == "Voising")
+                if (account.Role == "Client")
                 {
                     CVoising v = new CVoising(account);
                     v.Generer();
@@ -43,7 +43,7 @@ namespace AspCuisineN1.Controllers
                 ModelState.Clear();
                 ViewBag.Message = account.Nom + " " + account.Prenom + " Successfully Registered.";
             }
-            return View();
+            return View("Confirmation");
         }
 
 

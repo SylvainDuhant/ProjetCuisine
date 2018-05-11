@@ -172,6 +172,7 @@
     <Content Include="Views\Shared\NavbarChoixRole.cshtml" />
     <Content Include="Views\Administrateur\ModifierUtilisateur.cshtml" />
     <Content Include="Views\Account\ModifierProfil.cshtml" />
+    <Content Include="Views\Account\Confirmation.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
