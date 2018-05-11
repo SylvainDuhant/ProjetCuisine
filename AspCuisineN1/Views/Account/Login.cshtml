@@ -7,10 +7,11 @@
     <h2>Connexion</h2>
     @using (Html.BeginForm("LoginConf", "Account"))
     {
+
         <table>
             <tr>
                 <td>@Html.LabelFor(model => model.Nom)</td>
-                <td>@Html.TextBoxFor(model => model.Nom)</td>
+                <td>@Html.TextBoxFor(model => model.Nom)</td> 
                 <td>@Html.ValidationMessageFor(model => model.Nom)</td>
             </tr>
             <tr>
@@ -22,5 +23,9 @@
                 <td><input type="submit" value="Se Connecter" /></td>
             </tr>
         </table>
+        if (ViewBag.message != null)
+        {
+            <p style="color: red">@ViewBag.message</p>
+        }
     }
 </div>

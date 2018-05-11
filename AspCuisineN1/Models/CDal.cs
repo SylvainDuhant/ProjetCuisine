@@ -101,6 +101,20 @@ namespace AspCuisineN1.Models
             return list.Single(u => u.Id == id);
         }
 
+        public CVoising ObtenirVoisin(string nom)
+        {
+            List<CVoising> list = ObtenirListVoising();
+            try
+            {
+                return list.Single(u => u.Nom == nom);
+            }
+            catch
+            {
+                return null;
+            }
+            
+        }
+
         //-----------------------Cuisinier-----------------------------
         public List<CCuisinier> ObtenirListCuisinier()
         {
@@ -119,8 +133,22 @@ namespace AspCuisineN1.Models
             return list.Single(u => u.Id == id);
         }
 
-        //------------------Theme---------------
-        public List<CTheme> ObtenirListTheme()
+        public CCuisinier ObtenirCuisinier(string nom)
+        {
+            try
+            { 
+                List<CCuisinier> list = ObtenirListCuisinier();
+                return list.Single(u => u.Nom == nom);
+            }
+            catch
+            {
+                return null;
+            }
+            
+        }
+
+    //------------------Theme---------------
+    public List<CTheme> ObtenirListTheme()
         {
             return bdd.T_Theme.ToList();
         }

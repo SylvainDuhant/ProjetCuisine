@@ -31,7 +31,7 @@
             Client :
             @Html.RadioButtonFor(model => model.Role, "Client")
             <br />
-            Cuisinier : 
+            Cuisinier :
             @Html.RadioButtonFor(model => model.Role, "Cuisinier")
             <br />
             @Html.ValidationMessageFor(model => model.Role)
@@ -54,5 +54,10 @@
         <div class="form-group">
             <input type="submit" value="Creer un compte" />
         </div>
-     }
+        if (ViewBag.Message != null)
+        {
+            <p style="color:red">@ViewBag.Message</p>
+        }
+
+    }
 </div>

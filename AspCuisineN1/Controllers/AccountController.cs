@@ -27,6 +27,12 @@ namespace AspCuisineN1.Controllers
         [HttpPost]
         public ActionResult InscriptionConf(CUtilisateur account)
         {
+            CDal dal = new CDal();
+            if (dal.ObtenirVoisin(account.Nom) != null || dal.ObtenirCuisinier(account.Nom) != null)
+            {
+                ViewBag.Message = "Nom d'utilisateur déjà existant.";
+                return View("Inscription");
+            }
             if (ModelState.IsValid)
             {
                 if (account.Role == "Client")
@@ -41,7 +47,7 @@ namespace AspCuisineN1.Controllers
                 }
 
                 ModelState.Clear();
-                ViewBag.Message = account.Nom + " " + account.Prenom + " Successfully Registered.";
+                ViewBag.Message = $"{account.Nom} {account.Prenom} successfully Registered.";
             }
             return View("Confirmation");
         }
@@ -57,8 +63,19 @@ namespace AspCuisineN1.Controllers
         [HttpPost]
         public ActionResult LoginConf(CUtilisateur userinit)
         {
-            CUtilisateur user = CUtilisateur.ChercherUtilisateur(userinit);
-
+            CUtilisateur user = null;
+            try
+            {
+                user = CUtilisateur.ChercherUtilisateur(userinit);
+            }
+            catch
+            {
+                ViewBag.message = "Nom ou mot de passe incorrect.";
+                ViewBag.nom = userinit.Nom;
+                ViewBag.mdp = userinit.MotDePass;
+                return View("Login");
+            }
+            
             if (user != null)
             {
                 Session["Id"] = user.Id;
