@@ -49,5 +49,12 @@ namespace AspCuisineN1.Models.Poko
             CDal dal = new CDal();
             return dal.ObtenirVoisin(id);
         }
+
+        public void Commander(CCommande com)
+        {
+            CDal dal = new CDal();
+            dal.AjouterCommande(com);
+            
+        }
     }
 }

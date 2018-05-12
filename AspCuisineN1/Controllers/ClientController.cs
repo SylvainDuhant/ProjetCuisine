@@ -37,9 +37,11 @@ namespace AspCuisineN1.Controllers
         [HttpPost]
         public ActionResult AjouterCommandeVerif(CCommande com)
         {
-            CDal dal = new CDal();
+            CDal dal = new CDal();            
             com.Plat = dal.GetPlatById(com.Plat.Id); //Seul l'id est set, ici on met le "reste" avec
-            dal.AjouterCommande(com);
+            CVoising cli = dal.ObtenirVoisin((int)Session["Id"]);
+            com.RefVoising = cli;
+            cli.Commander(com);
             return RedirectToAction("ListCommande");
         }
         public ActionResult ListCommande()

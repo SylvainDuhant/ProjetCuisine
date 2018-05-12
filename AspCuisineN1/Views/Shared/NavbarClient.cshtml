@@ -1,10 +1,8 @@
 ﻿<div class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
-        <div class="navbar-header">
-            @Html.ActionLink("Accueil", "Index", "Home", new { @class = "navbar-brand" })
-        </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Accueil", "Index", "Home")</li>
                 <li>@Html.ActionLink("Liste de Theme", "ListTheme", "Client")</li>
                 <li class="dropdown">
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">Gerer Commande <b class="caret"></b></a>
@@ -12,7 +10,7 @@
                         <li>@Html.ActionLink("Liste de commande", "ListCommande", "Client")</li>
                         <li>@Html.ActionLink("Ajouter commande", "AjouterCommande", "Client")</li>
                     </ul>
-                </li>    
+                </li>
                 <li>@Html.ActionLink("Gerer Profil", "ModifierProfil", "Account")</li>
                 <li>@Html.ActionLink("A Propos", "APropos", "Home")</li>
             </ul>
