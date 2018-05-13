@@ -18,6 +18,13 @@
                         <li>@Html.ActionLink("Ajouter commande", "AjouterCommande", "Client")</li>
                     </ul>
                 </li>
+                <li class="dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">Gerer Produits <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("Liste de produits", "ListProduit", "Cuisinier")</li>
+                        <li>@Html.ActionLink("Ajouter produit", "AjouterProduit", "Cuisinier")</li>
+                    </ul>
+                </li>
                 <li>@Html.ActionLink("Gerer Profil", "ModifierProfil", "Account")</li>
                 <li>@Html.ActionLink("A Propos", "APropos", "Home")</li>
             </ul>

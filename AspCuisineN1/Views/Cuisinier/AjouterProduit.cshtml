@@ -1,0 +1,24 @@
+﻿@model AspCuisineN1.Models.Poko.CProduit
+@{
+    ViewBag.Title = "Ajouter un Produit";
+}
+
+<h2>Ajouter un produit</h2>
+<div>
+    @using (Html.BeginForm("AjouterProduitVerif", "Cuisinier"))
+    {
+        <div class="form-group">
+            @Html.LabelFor(model => model.Nom)
+            @Html.TextBoxFor(model => model.Nom)
+            @Html.ValidationMessageFor(model => model.Nom)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Prix)
+            @Html.TextBoxFor(model => model.Prix)
+            @Html.ValidationMessageFor(model => model.Prix)
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Sauvegarder" />
+        </div>
+    }
+</div>

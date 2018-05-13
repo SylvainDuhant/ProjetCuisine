@@ -173,6 +173,8 @@
     <Content Include="Views\Administrateur\ModifierUtilisateur.cshtml" />
     <Content Include="Views\Account\ModifierProfil.cshtml" />
     <Content Include="Views\Account\Confirmation.cshtml" />
+    <Content Include="Views\Cuisinier\ListProduit.cshtml" />
+    <Content Include="Views\Cuisinier\AjouterProduit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

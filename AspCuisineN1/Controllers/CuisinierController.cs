@@ -51,6 +51,26 @@ namespace AspCuisineN1.Controllers
             return RedirectToAction("ListPlat");
         }
 
+        public ActionResult ListProduit()
+        {
+            CDal dal = new CDal();
+            ViewBag.list_produit = dal.ObtenirListProduit();
+            return View();
+        }
+        public ActionResult AjouterProduit()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult AjouterProduitVerif(CProduit pro)
+        {
+            CDal dal = new CDal();
+            CProduit p = new CProduit();
+            p.Nom = pro.Nom;
+            p.Prix = pro.Prix;
+            dal.AjouterProduit(p);
+            return RedirectToAction("ListProduit");
+        }
         /*//Gestion Commande
         public ActionResult ListCommande()
         {
