@@ -40,7 +40,7 @@ namespace AspCuisineN1.Controllers
             CDal dal = new CDal();            
             com.Plat = dal.GetPlatById(com.Plat.Id); //Seul l'id est set, ici on met le "reste" avec
             CVoising cli = dal.ObtenirVoisin((int)Session["Id"]);
-            com.RefVoising = cli;
+            //com.RefVoising = cli; Fait planter de façon étrange
             cli.Commander(com);
             return RedirectToAction("ListCommande");
         }
